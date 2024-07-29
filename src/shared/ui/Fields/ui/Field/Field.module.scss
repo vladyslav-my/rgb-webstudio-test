@@ -1,0 +1,40 @@
+.Field {
+   position: relative;
+   &__input {
+      width: 100%;
+      padding: rem(13) rem(13) rem(14) rem(22);
+
+      color: #D7D7D7;
+
+      border: none;
+      border-radius: rem(5);
+      background: #272D3D;
+
+      font-size: rem(13);
+      font-weight: 400;
+      line-height: rem(24);
+
+      &::placeholder {
+         color: #D7D7D7;
+      }
+
+      @media (max-width: em($mobile)) {
+         padding: rem(12) rem(12) rem(12) rem(26.29);
+
+         font-size: rem(12);
+         line-height: rem(21.5);
+      }
+   }
+
+   &__error {
+      position: absolute;
+      bottom: rem(2);
+      left: rem(10);
+
+      color: #FF3459;
+
+      font-size: rem(13);
+
+      font-weight: 800;
+   }
+}

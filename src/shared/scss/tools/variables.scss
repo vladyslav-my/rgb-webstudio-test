@@ -1,0 +1,26 @@
+//* Vars
+$layoutColor: #242731;
+
+$primaryTextColor: #fff;
+
+$primaryTransition: 0.3s ease;
+$secondaryTransition: 0.2s ease;
+
+$loaderColor: red;
+
+//** Fonts by default:
+$fontFamily: "Gilroy"; //? name
+$fontSize: 16; //? size
+$fontColor: $primaryTextColor; //? color
+
+$minWidth: 320; //? min width of layout
+$containerPadding: 16; //? padding for container
+$maxWidthContainer: 928; //? width container
+
+
+//** Break-points:
+$pc: $containerPadding * 2 + $maxWidthContainer;
+$tablet: 991.98;
+$mobile: 767.98;
+$smallMobile: 479.98;
+$boundaryMobile: 360;

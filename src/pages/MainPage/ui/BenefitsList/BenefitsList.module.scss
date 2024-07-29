@@ -1,0 +1,129 @@
+.BenefitsList {
+   $p: &;
+   display: flex;
+   flex-direction: column;
+
+   gap: rem(16);
+
+
+   &__wrapper {
+       
+   }
+
+
+   &__title {
+      font-size: rem(12);
+      font-weight: 700;
+      line-height: 148%;
+   }
+
+   &__text {
+      font-size: rem(12);
+      line-height: 160%;
+   }
+
+
+   &__item {
+      display: flex;
+      align-items: start;
+
+
+       &_special {
+           #{$p} {
+               &__title {
+                  text-transform: uppercase;
+
+                  font-size: rem(13);
+
+                  line-height: 120%;
+
+                  span {
+                     color: #4252D1;
+                  }
+               }
+
+               &__imageWrapper {
+                  position: relative;
+               }
+   
+               &__image {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+
+                  width: rem(51);
+                  max-width: none;
+                  height: rem(49.27);
+               }
+
+           }
+
+       }
+   }
+
+   &__imageWrapper {
+       flex: 0 0 auto;
+
+       width: rem(37.81);
+       height: rem(37.81);
+       margin-top: rem(7);
+       margin-right: rem(30.19);
+   }
+
+   &__image {
+      max-width: 100%; 
+   }
+
+
+
+   @media (max-width: em($smallMobile)) {
+      gap: rem(20);
+      &__title {
+         font-size: rem(14);
+         line-height: 120%;
+      }
+
+      &__text {
+         font-size: rem(12);
+         line-height: 148%;
+      }
+
+
+      &__item {       
+         &_special {
+            #{$p} {
+               &__title {
+                  font-size: rem(14);
+                  line-height: 120%;
+               }
+
+               &__text {
+                  font-size: rem(12);
+                  line-height: 160%;
+               }
+
+               &__image {
+                  width: rem(51);
+                  height: rem(49.27);
+               }
+            }
+         }
+
+         &__image {
+            width: rem(51);
+            height: rem(49.27);
+         }
+      }
+
+      &__image {
+         width: 100%;
+      }
+
+      &__imageWrapper {
+         width: rem(45.81);
+         height: rem(45.81);
+         margin-top: rem(3);
+         margin-right: rem(16.19);
+      }
+   }
+}

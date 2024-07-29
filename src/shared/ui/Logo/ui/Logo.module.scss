@@ -1,0 +1,13 @@
+.Logo {
+	&__icon {
+		width: rem(182);
+		height: rem(56);
+
+		transition: width $primaryTransition, height $primaryTransition;
+
+		@media (max-width: em($tablet)) {
+			width: rem(101);
+			height: rem(32);
+		}
+	}
+}

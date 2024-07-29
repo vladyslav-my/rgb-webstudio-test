@@ -1,0 +1,32 @@
+.Button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+
+   padding: rem(13) rem(10) rem(14) rem(10);
+
+   transition: opacity $primaryTransition;
+
+   border-radius: rem(5);
+
+   background-color: #FF3459;
+
+   font-size: rem(15);
+   font-weight: 700;
+   line-height: rem(24);
+
+   &:hover {
+      opacity: 0.5;
+   }
+
+   @media (max-width: em($mobile)) {
+      width: rem(222.25);
+      height: rem(45.55);
+
+      background-color: #0048FF;
+
+      font-size: rem(14);
+   }
+}

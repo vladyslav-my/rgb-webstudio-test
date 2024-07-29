@@ -1,0 +1,104 @@
+.Page {
+	position: relative;
+
+	display: flex;
+
+	overflow: hidden;
+	flex-direction: column;
+
+	height: 100%;
+
+
+	&__ellipse_1 {
+		position: fixed;
+		z-index: -1;
+		top: rem(-70);
+		left: rem(-31.33);
+	
+		width: rem(399.01);
+		height: rem(400.31);
+	
+		transform: rotate(9.41deg);
+	
+		opacity: 0.5;
+		background: rgb(51, 47, 101);
+	
+		filter: blur(rem(206.26));
+	}
+	
+	&__ellipse_2 {
+		position: fixed;
+		z-index: -1;
+		top: rem(-316);
+		left: rem(1068.67);
+	
+		width: rem(790.65);
+		height: rem(793.23);
+	
+		transform: rotate(9.41deg);
+	
+		opacity: 0.8;
+		background: rgb(51, 47, 101);
+	
+		filter: blur(rem(206.26));
+	}
+	
+	&__ellipse_3 {
+		position: absolute;
+		z-index: -1;
+		top: rem(410);
+		left: rem(-151);
+	
+		width: rem(912);
+		height: rem(912);
+	
+		filter: blur(500px);
+	
+		background: rgb(51, 47, 101);
+	}
+
+	&__main {
+		position: relative;
+
+
+		flex: 1 1 auto;
+
+		padding-bottom: rem(140);
+
+		@media (max-width: em($mobile)) {
+			padding-bottom: rem(59);
+		}
+	}
+
+	&__header {
+	}
+
+	&__decoration {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		right: rem(22);
+
+		transform: translateY(-50%);
+	}
+
+	&__twoDecoration {
+		position: fixed;
+		bottom: rem(-50);
+		left: 50%;
+
+
+		transform: translateX(-50%);
+
+
+		text-transform: uppercase;
+		text-wrap: nowrap;
+
+		color: transparent;
+		
+		font-size: rem(129.36);
+		font-weight: 800;
+		-webkit-text-stroke-width: rem(1.5);
+		-webkit-text-stroke-color: #ffffff0d;
+	}
+}

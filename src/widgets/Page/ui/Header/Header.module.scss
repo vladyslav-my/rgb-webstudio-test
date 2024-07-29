@@ -1,0 +1,84 @@
+.Header {
+   &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-top: rem(34);
+      padding-bottom: rem(24);
+
+      transition: padding-top $primaryTransition;
+
+      @media (max-width: em($smallMobile)) {
+         padding-top: rem(28);
+         padding-bottom: rem(28);
+      }
+   }
+
+   &__menu {
+      display: flex;
+      gap: rem(18);
+
+      transition: gap $primaryTransition;
+
+      @media (max-width: em($smallMobile)) {
+         gap: rem(6);
+      }
+   }
+
+   &__logo {
+      @media (max-width: em($mobile)) {
+         margin-left: rem(14);
+      }
+   }
+}
+
+.Shell {
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   width: rem(141);
+   height: rem(40);
+
+   padding: rem(2);
+
+   transition: width $primaryTransition, height $primaryTransition, font-size $primaryTransition;
+
+   border-radius: rem(10);
+   background-color: rgb(48, 46, 90);
+
+   font-size: rem(14);
+   font-weight: 700;
+   gap: rem(6);
+
+   
+
+   &__icon {
+      width: em(15);
+      height: em(15);
+
+      transition: width $primaryTransition, height $primaryTransition;
+
+      @media (max-width: em($smallMobile)) {
+         width: rem(12.5);
+         height: rem(12.5);
+      }
+      
+      //? to 12.5
+   }
+
+
+   @media (max-width: em($smallMobile)) {
+      width: rem(88);
+      height: rem(24);
+
+      font-size: rem(11);
+
+      &_small {
+         width: rem(84);
+      }
+   }
+
+}
