@@ -76,7 +76,7 @@
 	&__decoration {
 		position: absolute;
 		z-index: -1;
-		top: 50%;
+		top: calc(50% + rem(22));
 		right: rem(22);
 
 		transform: translateY(-50%);

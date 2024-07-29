@@ -5,7 +5,6 @@ import {
 } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Devices } from "@/shared/const/common";
-import TwoDecorationImage from "../../assets/decoration-2.png";
 import DecorationImage from "../../assets/decoration.png";
 import { Header } from "../Header/Header";
 import cls from "./Page.module.scss";
