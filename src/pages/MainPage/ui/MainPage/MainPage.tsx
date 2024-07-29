@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import clsx from "clsx";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMediaQuery } from "react-responsive";
 import { Page } from "@/widgets/Page";
@@ -19,18 +19,29 @@ interface MainPageProps {
 export const MainPage: FC<MainPageProps> = memo(({ className }) => {
 	const isMobile = useMediaQuery({ maxWidth: Devices.MOBILE });
 
-	const { register, handleSubmit, formState: { errors } } = useForm();
-	console.log(errors);
-	const onSubmit = (data: any) => {
-		console.log(data);
-
+	const {
+		register, handleSubmit, reset, formState: { errors },
+	} = useForm({
+		defaultValues: {
+			name: "",
+			email: "",
+			phone: "",
+		},
+		mode: "onBlur",
+		reValidateMode: "onBlur",
+	});
+	const onSubmit = async (data: any) => {
 		emailjs
 			.send("service_dc1j43l", "template_l6z5b66", data, { publicKey: "WEPl72IEviXkxCLPX" }).then(
 				(response) => {
 					console.log("SUCCESS!", response.status, response.text);
+					console.log(data);
+
+					reset();
 				},
 				(error) => {
 					console.log("FAILED...", error);
+					// reset();
 				},
 			);
 	};
@@ -90,7 +101,6 @@ export const MainPage: FC<MainPageProps> = memo(({ className }) => {
 							<Field
 								error={errors.email?.message}
 								placeholder="Ваш email"
-								// error={errors.email}
 								{
 									...register("email", {
 										required: "Поле обязательно к заполнению",

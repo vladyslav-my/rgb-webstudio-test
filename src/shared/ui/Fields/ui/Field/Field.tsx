@@ -1,3 +1,4 @@
+import { Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { FC, forwardRef, InputHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
@@ -15,11 +16,20 @@ export const Field: FC<FieldProps> = forwardRef(({
 	return (
 		<div className={clsx(cls.Field, {}, [className])}>
 			<input className={cls.Field__input} ref={ref} {...otherProps} {...register} />
-			{error && (
-				<span className={cls.Field__error}>
-					{error}
-				</span>
-			)}
+			<Transition
+				show={!!error}
+				as="span"
+				className={cls.Field__error}
+				enter={cls.Field__errorEnter}
+				enterFrom={cls.Field__errorEnterFrom}
+				enterTo={cls.Field__errorEnterTo}
+				leave={cls.Field__errorLeave}
+				leaveFrom={cls.Field__errorLeaveFrom}
+				leaveTo={cls.Field__errorLeaveTo}
+			>
+				{error}
+			</Transition>
+
 		</div>
 	);
 });

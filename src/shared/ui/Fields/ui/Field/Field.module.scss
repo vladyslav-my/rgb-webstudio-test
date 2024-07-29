@@ -37,4 +37,29 @@
 
       font-weight: 800;
    }
+
+
+   &__errorEnter {
+      transition: opacity $primaryTransition;
+   }
+
+   &__errorEnterFrom {
+      opacity: 0;
+   }
+
+   &__errorEnterTo {
+      opacity: 1;
+   }
+
+   &__errorLeave {
+      transition: opacity $primaryTransition;
+   }
+
+   &__errorLeaveFrom {
+      opacity: 1;
+   }
+
+   &__errorLeaveTo {
+      opacity: 0;
+   }
 }
