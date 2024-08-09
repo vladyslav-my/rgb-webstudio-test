@@ -1,5 +1,8 @@
 .Field {
    position: relative;
+
+   transition: padding-bottom $primaryTransition;
+
    &__input {
       width: 100%;
       padding: rem(13) rem(13) rem(14) rem(22);
@@ -35,31 +38,10 @@
 
       font-size: rem(13);
 
-      font-weight: 800;
+      font-weight: 600;
    }
 
-
-   &__errorEnter {
-      transition: opacity $primaryTransition;
-   }
-
-   &__errorEnterFrom {
-      opacity: 0;
-   }
-
-   &__errorEnterTo {
-      opacity: 1;
-   }
-
-   &__errorLeave {
-      transition: opacity $primaryTransition;
-   }
-
-   &__errorLeaveFrom {
-      opacity: 1;
-   }
-
-   &__errorLeaveTo {
-      opacity: 0;
+   &_error {
+      padding-bottom: rem(20);
    }
 }

@@ -1,13 +1,18 @@
+import "react-international-phone/style.css";
+
 import emailjs from "@emailjs/browser";
 import clsx from "clsx";
-import { FC, memo, useState } from "react";
-import { useForm } from "react-hook-form";
+import {
+	FC, memo, useCallback, useState,
+} from "react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useMediaQuery } from "react-responsive";
 import { Page } from "@/widgets/Page";
 import { Devices } from "@/shared/const/common";
 import { Button } from "@/shared/ui/Buttons";
 import { Container } from "@/shared/ui/Container";
 import { Field } from "@/shared/ui/Fields";
+import { PhoneNumberField } from "@/shared/ui/Fields/ui/PhoneNumberField/PhoneNumberField";
 import GlobeIcon from "../../assets/globe.svg?react";
 import { BenefitsList } from "../BenefitsList/BenefitsList";
 import cls from "./MainPage.module.scss";
@@ -20,7 +25,7 @@ export const MainPage: FC<MainPageProps> = memo(({ className }) => {
 	const isMobile = useMediaQuery({ maxWidth: Devices.MOBILE });
 
 	const {
-		register, handleSubmit, reset, formState: { errors },
+		handleSubmit, control, reset, formState: { errors },
 	} = useForm({
 		defaultValues: {
 			name: "",
@@ -30,21 +35,23 @@ export const MainPage: FC<MainPageProps> = memo(({ className }) => {
 		mode: "onBlur",
 		reValidateMode: "onBlur",
 	});
-	const onSubmit = async (data: any) => {
-		emailjs
-			.send("service_dc1j43l", "template_l6z5b66", data, { publicKey: "WEPl72IEviXkxCLPX" }).then(
-				(response) => {
-					console.log("SUCCESS!", response.status, response.text);
-					console.log(data);
 
-					reset();
-				},
-				(error) => {
-					console.log("FAILED...", error);
-					// reset();
-				},
-			);
-	};
+	const onSubmit = useCallback((data: any) => {
+		console.log(data);
+		// emailjs
+		// 	.send("service_dc1j43l", "template_l6z5b66", data, { publicKey: "WEPl72IEviXkxCLPX" }).then(
+		// 		(response) => {
+		// 			console.log("SUCCESS!", response.status, response.text);
+		// 			console.log(data);
+
+		// 			reset();
+		// 		},
+		// 		(error) => {
+		// 			console.log("FAILED...", error);
+		// 		// reset();
+		// 		},
+		// 	);
+	}, []);
 
 	return (
 		<Page className={clsx(cls.MainPage, {}, [className])}>
@@ -75,41 +82,64 @@ export const MainPage: FC<MainPageProps> = memo(({ className }) => {
 							<span>и получите подарок</span>
 						</p>
 						<div className={cls.Form__fields}>
-							<Field
-								error={errors.name?.message}
-								placeholder="Ваше имя и фамилия"
-								{
-									...register("name", {
-										required: "Поле обязательно к заполнению",
-									})
-								}
+							<Controller
+								control={control}
+								name="name"
+								rules={{
+									required: "Поле обязательно к заполнению",
+									minLength: { value: 2, message: "Ім’я повинно містити мінімум 2 символи" },
+									maxLength: { value: 30, message: "Ім’я повинно містити максимум 30 символів" },
+									pattern: {
+										value: /^[^\s]+(\s+[^\s]+)*$/,
+										message: "Имя не должно состоять из пробелов",
+									},
+								}}
+								render={({ field }) => (
+									<Field
+										error={errors.name?.message}
+										withValidation
+										placeholder="Ваше имя и фамилия"
+										{...field}
+									/>
+								)}
 							/>
-							<Field
-								error={errors.phone?.message}
-								placeholder="Ваш номер телефона"
-								// error={errors.phone}
-								{
-									...register("phone", {
-										required: "Поле обязательно к заполнению",
-										pattern: {
-											value: /^(\+380|0)\d{9}$/,
-											message: "Некорректный номер телефона",
-										},
-									})
-								}
+							<Controller
+								control={control}
+								name="phone"
+								rules={{
+									required: "Поле обязательно к заполнению",
+									pattern: {
+										value: /^\+?[1-9]\d{1,14}$/,
+										message: "Некорректный номер телефона",
+									},
+								}}
+								render={({ field }) => (
+									<PhoneNumberField
+										placeholder="Ваш номер телефона"
+										error={errors.phone?.message}
+										withValidation
+										{...field}
+									/>
+								)}
 							/>
-							<Field
-								error={errors.email?.message}
-								placeholder="Ваш email"
-								{
-									...register("email", {
-										required: "Поле обязательно к заполнению",
-										pattern: {
-											value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-											message: "Некорректный email",
-										},
-									})
-								}
+							<Controller
+								control={control}
+								name="email"
+								rules={{
+									required: "Поле обязательно к заполнению",
+									pattern: {
+										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+										message: "Некорректный email",
+									},
+								}}
+								render={({ field }) => (
+									<Field
+										error={errors.email?.message}
+										withValidation
+										placeholder="Ваш email"
+										{...field}
+									/>
+								)}
 							/>
 						</div>
 						<Button className={cls.Form__button} type="submit">Записаться бесплатно</Button>

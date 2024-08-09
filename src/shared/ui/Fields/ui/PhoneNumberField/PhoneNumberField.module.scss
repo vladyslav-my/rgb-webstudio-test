@@ -1,0 +1,85 @@
+.PhoneNumberField {
+   position: relative;
+
+   transition: padding-bottom $primaryTransition;
+
+   &__this {
+      position: relative;
+
+      width: 100%;
+
+      :global {
+         .react-international-phone-country-selector {
+            position: absolute;
+            z-index: 1;
+   
+            top: 50%;
+            left: rem(5);
+   
+            transform: translateY(-50%);
+   
+   
+            .react-international-phone-country-selector-button {
+               background-color: #272D3D;
+            }
+   
+            .react-international-phone-country-selector-dropdown {
+               color: #fff;
+               background-color: #272D3D;
+   
+               &__list-item {
+                  &:hover {
+                     color: #808080;
+                     background-color: #fff
+                  }
+               }
+            }
+         }
+   
+         .react-international-phone-input {
+            box-sizing: content-box;
+   
+            width: 100%;
+            height: auto;
+            padding: rem(13) rem(13) rem(14) rem(60);
+      
+            color: #D7D7D7;
+      
+            border: none;
+            border-radius: rem(5);
+            background: #272D3D;
+      
+            font-size: rem(13);
+            font-weight: 400;
+            line-height: rem(24) !important;
+      
+            &::placeholder {
+               color: #D7D7D7;
+            }
+      
+            @media (max-width: em($mobile)) {
+               padding: rem(12) rem(12) rem(12) rem(55);
+      
+               font-size: rem(12);
+               line-height: rem(21.5);
+            }
+         }
+      }
+   }
+
+   &_error {
+      padding-bottom: rem(20);
+   }
+
+   &__error {
+      position: absolute;
+      bottom: rem(2);
+      left: rem(10);
+
+      color: #FF3459;
+
+      font-size: rem(13);
+
+      font-weight: 600;
+   }
+}
