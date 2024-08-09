@@ -5,7 +5,8 @@ import {
 } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Devices } from "@/shared/const/common";
-import DecorationImage from "../../assets/decoration.png";
+// import DecorationImage from "../../assets/decoration.png";
+import { Decoration } from "../Decoration/Decoration";
 import { Header } from "../Header/Header";
 import cls from "./Page.module.scss";
 
@@ -35,7 +36,8 @@ export const Page: FC<PageProps> = memo(({
 				) : <div className={cls.Page__ellipse_3} />
 			}
 			{isNotIntermediateDesktop && <p className={cls.Page__twoDecoration}>front-end developer</p>}
-			{isNotIntermediateDesktop && <img className={cls.Page__decoration} src={DecorationImage} />}
+			{/* {isNotIntermediateDesktop && <img className={cls.Page__decoration} src={DecorationImage} />} */}
+			{isNotIntermediateDesktop && <Decoration className={cls.Page__decoration} />}
 		</div>
 	);
 });
