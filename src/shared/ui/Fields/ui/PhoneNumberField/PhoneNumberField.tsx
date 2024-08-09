@@ -39,7 +39,13 @@ export const PhoneNumberField: FC<PhoneNumberFieldProps> = forwardRef(({
 			[cls.PhoneNumberField_error]: !!error && withValidation,
 		}, [className])}
 		>
-			<PhoneInput className={cls.PhoneNumberField__this} {...otherProps} onChange={onChange} ref={ref} />
+			<PhoneInput
+				defaultCountry="ua"
+				className={cls.PhoneNumberField__this}
+				{...otherProps}
+				onChange={onChange}
+				ref={ref}
+			/>
 			{transition && transition((styles, isError) => (
 				isError && (
 					<animated.span style={styles} className={cls.PhoneNumberField__error}>
