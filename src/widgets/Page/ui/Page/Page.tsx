@@ -25,7 +25,6 @@ export const Page: FC<PageProps> = memo(({
 			<Header className={cls.Page__header} />
 			<main className={clsx(cls.Page__main, [className])}>
 				{children}
-
 			</main>
 			{
 				!isMobile ? (
@@ -35,8 +34,8 @@ export const Page: FC<PageProps> = memo(({
 					</>
 				) : <div className={cls.Page__ellipse_3} />
 			}
-			{isNotIntermediateDesktop && <img className={cls.Page__decoration} src={DecorationImage} />}
 			{isNotIntermediateDesktop && <p className={cls.Page__twoDecoration}>front-end developer</p>}
+			{isNotIntermediateDesktop && <img className={cls.Page__decoration} src={DecorationImage} />}
 		</div>
 	);
 });

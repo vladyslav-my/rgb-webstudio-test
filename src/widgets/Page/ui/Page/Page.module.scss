@@ -1,9 +1,9 @@
 .Page {
-	position: relative;
+	// position: relative;
 
 	display: flex;
 
-	overflow: hidden;
+	overflow: auto;
 	flex-direction: column;
 
 	height: 100%;
@@ -12,8 +12,8 @@
 	&__ellipse_1 {
 		position: fixed;
 		z-index: -1;
-		top: rem(-70);
-		left: rem(-31.33);
+		top: rem(-96.77);
+		left: rem(-70);
 	
 		width: rem(399.01);
 		height: rem(400.31);
@@ -29,8 +29,8 @@
 	&__ellipse_2 {
 		position: fixed;
 		z-index: -1;
-		top: rem(-316);
-		left: rem(1068.67);
+		top: rem(-109);
+		right: rem(-338.68);
 	
 		width: rem(790.65);
 		height: rem(793.23);
@@ -44,7 +44,7 @@
 	}
 	
 	&__ellipse_3 {
-		position: absolute;
+		position: fixed;
 		z-index: -1;
 		top: rem(410);
 		left: rem(-151);
@@ -59,6 +59,8 @@
 
 	&__main {
 		position: relative;
+
+		// overflow: hidden;
 
 
 		flex: 1 1 auto;
@@ -84,9 +86,9 @@
 
 	&__twoDecoration {
 		position: fixed;
+		z-index: -1;
 		bottom: rem(-50);
 		left: 50%;
-
 
 		transform: translateX(-50%);
 
@@ -96,9 +98,11 @@
 
 		color: transparent;
 		
-		font-size: rem(129.36);
+		font-size: em(129.36);
 		font-weight: 800;
 		-webkit-text-stroke-width: rem(1.5);
 		-webkit-text-stroke-color: #ffffff0d;
+
+		@include adaptiveValue("font-size", 129.36, 30, 0, 1440, $boundaryMobile);
 	}
 }

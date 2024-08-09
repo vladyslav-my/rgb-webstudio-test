@@ -1,0 +1,162 @@
+.Information {
+   &__webinar {
+      @media (max-width: em($smallMobile)) {
+          justify-self: center;       
+      }
+
+      @media (max-width: em($mobile)) {
+          margin-left: rem(-13);
+      }
+  }
+
+   &__title {
+      margin-bottom: rem(25);
+
+
+      @media (max-width: em($tablet)) and (min-width: em($mobile)) {
+         font-size: rem(17) !important
+      }  
+
+      @media (max-width: em($mobile)) {
+         margin-bottom: rem(19);
+      }
+   }
+
+
+   &__text {
+      margin-bottom: rem(63);
+
+      @media (max-width: em($mobile)) {
+         margin-bottom: rem(0);
+
+         font-size: rem(14) !important;
+         line-height: 148% !important;
+      }
+   }
+}
+
+.Webinar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   width: rem(119);
+   height: rem(32);
+
+   border-radius: rem(5);
+   background: #4252D1;
+
+   font-weight: 600;
+   line-height: rem(24);
+   gap: rem(6);
+   
+
+   &__icon {
+      width: rem(19);
+      height: rem(19);
+       
+      @media (max-width: em($smallMobile)) {
+         width: rem(14.21);
+         height: rem(14.21);
+      }
+   }
+
+   @media (max-width: em($smallMobile)) {
+      width: rem(89);
+      height: rem(23.93);
+
+      border-radius: rem(3);
+
+      font-size: rem(12);
+      gap: rem(4.49);
+   }
+}
+
+
+.Title {
+   display: flex;
+   flex-direction: column;
+
+   transition: all $primaryTransition;
+
+   font-size: em(22);
+   font-weight: 600;
+
+   &__top {
+      text-transform: uppercase;
+
+      color: #FF3459;
+
+      font-size: em(77, 22);
+      font-weight: 800;
+   }
+
+   &__bottom {
+      text-wrap: nowrap;
+   }
+
+   &__mark {
+      position: relative;
+      z-index: -1;
+
+      display: inline-flex;
+
+      width: em(106.72, 22);
+      height: em(38.69, 22);
+
+      margin-right: em(19, 22);
+      padding: em(3, 22) rem(13, 22);
+
+      transform: rotate(-3.51deg);
+      text-transform: uppercase;
+
+      border-radius: em(5, 22);
+      background: rgb(255, 52, 89);
+
+      font-size: em(23.64, 22);
+      font-weight: 800;
+   }
+
+   &__marked {
+      transform: rotate(3.51deg);
+      text-wrap: nowrap;
+   }
+
+   &__decoration {
+       
+   }
+
+   @media (max-width: em($smallMobile)) {
+      text-align: center;
+
+      font-size: em(15);
+
+      &__main {
+         font-size: em(52.73);
+      }
+      
+
+      &__mark {
+         width: em(76.26);
+         height: em(27.53);
+         padding: em(4.8) em(7.28) em(2.18) em(10.35);
+
+         font-size: em(16);
+      }
+   }
+}
+
+
+.Text {
+   font-size: rem(18);
+
+   line-height: 148%;
+
+   &__bold {
+      font-weight: 700;
+   }
+
+   @media (max-width: em($smallMobile)) {
+      text-align: center;
+   }
+}

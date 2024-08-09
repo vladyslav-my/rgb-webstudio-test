@@ -32,10 +32,10 @@ export const BenefitsList: FC<BenefitsListProps> = ({ className }) => {
 				</div>
 				<div className={cls.BenefitsList__wrapper}>
 					<h2 className={cls.BenefitsList__title}>Бонус за регистрацию</h2>
-					<p className={cls.BenefitsList__text}>
+					<div className={cls.BenefitsList__text}>
 						<p>PDF-файл "5 преимуществ</p>
-						{!isSmallMobile ? <p>профессии фронтенд разработчика"</p> : <p>профессии веб-дизайнера" </p>}
-					</p>
+						<p>профессии фронтенд разработчика"</p>
+					</div>
 				</div>
 			</li>
 		</ul>

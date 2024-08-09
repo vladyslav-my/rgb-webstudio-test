@@ -1,4 +1,5 @@
 import "@/shared/scss/layout/index.scss";
+import "react-international-phone/style.css";
 
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

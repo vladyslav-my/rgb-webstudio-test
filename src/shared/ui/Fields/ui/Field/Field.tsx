@@ -7,11 +7,10 @@ import cls from "./Field.module.scss";
 interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
 	error?: FieldError["message"];
-	register?: any;
 	withValidation?: boolean;
 }
 
-export const Field: FC<FieldProps> = forwardRef(({
+export const Field: FC<FieldProps> = forwardRef<HTMLInputElement, FieldProps>(({
 	className, error, withValidation, ...otherProps
 }, ref) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
