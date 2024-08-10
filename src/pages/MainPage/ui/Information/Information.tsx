@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { FC } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Devices } from "@/shared/const/common";
+import { Devices } from "@/shared/const/devices";
 import GlobeIcon from "../../assets/globe.svg?react";
 import { BenefitsList } from "../BenefitsList/BenefitsList";
 import cls from "./Information.module.scss";
