@@ -31,6 +31,7 @@ export const Information: FC<InformationProps> = ({ className }) => {
 			<p className={clsx(cls.Text, cls.Information__text)}>
 				Узнайте какими
 				<b className={cls.Text__bold}>навыками должен обладать фронтенд разработчик в 2022 году</b>
+				{" "}
 				и как начать карьеру в востребованной профессии
 			</p>
 			{!isMobile && <BenefitsList />}

@@ -45,8 +45,8 @@ export const SendToEmailForm: FC<SendToEmailFormProps> = memo(({ className }) =>
 
 	return (
 		<>
-			<RejectedModal isOpen={isOpenRejectedModal} setIsOpen={setIsOpenFulfiledModal} />
-			<FulfiledModal isOpen={isOpenFulfiledModal} setIsOpen={setIsOpenRejectedModal} />
+			<RejectedModal isOpen={isOpenRejectedModal} setIsOpen={setIsOpenRejectedModal} />
+			<FulfiledModal isOpen={isOpenFulfiledModal} setIsOpen={setIsOpenFulfiledModal} />
 			<form className={clsx(cls.SendToEmailForm, [className])} onSubmit={handleSubmit(onSubmit)}>
 				<p className={cls.SendToEmailForm__title}>
 					Запишитесь <span className={cls.SendToEmailForm__redSpan}>бесплатно</span>
