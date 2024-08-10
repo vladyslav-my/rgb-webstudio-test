@@ -1,4 +1,6 @@
 .Button {
+   position: relative;
+
    display: inline-flex;
    align-items: center;
    justify-content: center;
@@ -19,6 +21,26 @@
 
    &:hover {
       opacity: 0.5;
+   }
+
+   &_loader {
+      user-select: none;
+      pointer-events: none;
+
+      color: transparent;
+   }
+
+   &__loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      color: rgb(154, 154, 198);
+
+      font-size: rem(13);
+      
    }
 
    @media (max-width: em($mobile)) {

@@ -17,6 +17,7 @@ interface SendToEmailFormProps {
 export const SendToEmailForm: FC<SendToEmailFormProps> = memo(({ className }) => {
 	const [isOpenFulfiledModal, setIsOpenFulfiledModal] = useState(false);
 	const [isOpenRejectedModal, setIsOpenRejectedModal] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const {
 		handleSubmit, control, reset, formState: { errors },
 	} = useForm({
@@ -30,14 +31,16 @@ export const SendToEmailForm: FC<SendToEmailFormProps> = memo(({ className }) =>
 	});
 
 	const onSubmit = useCallback((data: any) => {
-		// console.log(data);
+		setIsLoading(true);
 		emailjs
 			.send("service_dc1j43l", "template_l6z5b66", data, { publicKey: "WEPl72IEviXkxCLPX" }).then(
 				(response) => {
+					setIsLoading(false);
 					setIsOpenFulfiledModal(true);
 					reset();
 				},
 				(error) => {
+					setIsLoading(false);
 					setIsOpenRejectedModal(true);
 				},
 			);
@@ -113,7 +116,12 @@ export const SendToEmailForm: FC<SendToEmailFormProps> = memo(({ className }) =>
 						)}
 					/>
 				</div>
-				<Button className={cls.SendToEmailForm__button} type="submit">Записаться бесплатно</Button>
+				<Button
+					className={cls.SendToEmailForm__button}
+					type="submit"
+					isLoading={isLoading}
+				>Записаться бесплатно
+				</Button>
 				<p className={cls.Policy}>Нажимая на кнопку я согашаюсь
 					<a className={cls.Policy__link} href="#">c политикой конфидециальности</a>
 				</p>
