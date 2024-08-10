@@ -82,32 +82,36 @@
    line-height: 149%;
 
    &__link {
-       position: relative;
+      position: relative;
 
-       display: inline-block;
+      display: inline-block;
+
+      transition: color $primaryTransition;
+      &:hover {
+         color: #b5abab;
+      }
 
        &::before {
-           position: absolute;
-           bottom: rem(2);
-           left: 0;
+         position: absolute;
+         bottom: rem(2);
+         left: 0;
 
-           display: block;
+         display: block;
 
-           width: 100%;
-           height: rem(1);
+         width: 100%;
+         height: rem(1);
 
-           content: "";
+         content: "";
 
-           opacity: 0.5;
+         opacity: 0.5;
 
-           background: #fff;
-
+         background: #fff;
        }
    }
 
 
    @media (max-width: em($mobile)) {
-       font-size: rem(11);
-       line-height: 149%;
+      font-size: rem(11);
+      line-height: 149%;
    }
 }

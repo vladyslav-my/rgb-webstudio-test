@@ -1,0 +1,23 @@
+.RejectedModal {
+   &__title {
+      width: 100%;
+
+      margin-bottom: rem(20);
+
+      text-align: center;
+
+      color: $loaderColor;
+
+      font-size: rem(24);
+      font-weight: 600
+   }
+
+   &__text {
+      max-width: rem(300);
+      margin: 0 auto;
+
+      text-align: center;
+
+      font-size: rem(18);
+   }
+}

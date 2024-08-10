@@ -4,7 +4,7 @@ import {
 	memo,
 } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Devices } from "@/shared/const/common";
+import { Devices } from "@/shared/const/devices";
 // import DecorationImage from "../../assets/decoration.png";
 import { Decoration } from "../Decoration/Decoration";
 import { Header } from "../Header/Header";

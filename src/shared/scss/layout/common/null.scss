@@ -21,7 +21,7 @@ body {
 	overflow: hidden;
 
 	min-width: $minWidth + px;
-	height: 100vh;
+	height: 100svh;
 }
 
 html {
@@ -115,5 +115,5 @@ span {
 }
 
 #root {
-	height: 100vh;
+	height: 100svh;
 }

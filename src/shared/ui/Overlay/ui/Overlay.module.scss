@@ -2,7 +2,7 @@
    $p: &;
 	position: fixed;
 
-	z-index: $overlayZindex;
+	z-index: 1000;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -17,15 +17,8 @@
 
 	transition: opacity 0.3s ease;
 
-	background: rgba(63, 64, 155, 0.53);
+	background: rgba(90, 91, 144, 0.53);
 
-   &_aboveAllZindex {
-      z-index: $overlayZindex;
-   }
-
-   &_lowerHeaderZindex {
-      z-index: $overlayLowerHeaderZindex;
-   }
 
    &_enter {
       transition: opacity $primaryTransition;

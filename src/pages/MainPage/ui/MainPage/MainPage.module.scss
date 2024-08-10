@@ -3,19 +3,23 @@
 
     &__container {
         display: flex;
-        align-items: center;
         justify-content: space-between;
         column-gap: rem(35);
 
         @include adaptiveValue("row-gap", 40, 20, 0, $mobile, $boundaryMobile);
 
         @media (max-width: em($mobile)) {
+            align-items: center;
             flex-direction: column;
         }
     }
 
     &__information {
         max-width: rem(427);
+
+        @media (min-width: em($mobile)) {
+            margin-top: rem(10);
+        }
 
         @media (max-width: em($smallMobile)) {
             display: grid;    

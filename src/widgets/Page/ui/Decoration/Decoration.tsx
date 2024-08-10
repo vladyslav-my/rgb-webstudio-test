@@ -1,6 +1,5 @@
 import { useSpring, animated } from "@react-spring/web";
 import clsx from "clsx";
-import { delay } from "node_modules/@reduxjs/toolkit/dist/utils";
 import { FC } from "react";
 import CssIcon from "../../assets/css.svg?react";
 import HtmlIcon from "../../assets/html.svg?react";

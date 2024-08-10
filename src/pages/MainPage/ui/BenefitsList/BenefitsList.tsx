@@ -1,7 +1,5 @@
 import clsx from "clsx";
 import { FC } from "react";
-import { useMediaQuery } from "react-responsive";
-import { Devices } from "@/shared/const/common";
 import GiftImage from "../../assets/gift.png";
 import KirillImage from "../../assets/kirill.png";
 import cls from "./BenefitsList.module.scss";
@@ -11,8 +9,6 @@ interface BenefitsListProps {
 }
 
 export const BenefitsList: FC<BenefitsListProps> = ({ className }) => {
-	const isSmallMobile = useMediaQuery({ maxWidth: Devices.SMALLMOBILE });
-
 	return (
 		<ul className={clsx(cls.BenefitsList, {}, [className])}>
 			<li className={clsx(cls.BenefitsList__item, cls.BenefitsList__item_special)}>

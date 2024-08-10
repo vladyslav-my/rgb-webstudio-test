@@ -17,22 +17,16 @@ interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
 		leaveFrom: string;
 		leaveTo: string;
 	}
-	modifier?: OverlayModifier;
-}
-
-export enum OverlayModifier {
-	AboveAllZindex = "Overlay_aboveAllZindex",
-	LowerHeaderZindex = "Overlay_lowerHeaderZindex",
 }
 
 export const Overlay: FC<OverlayProps> = memo(({
-	className, classNames, isShow, children, modifier = OverlayModifier.AboveAllZindex, ...anotherProps
+	className, classNames, isShow, children, ...anotherProps
 }) => {
 	return (
 		<Transition
 			show={isShow}
 			as="div"
-			className={clsx(cls.Overlay, [className, cls[modifier]])}
+			className={clsx(cls.Overlay, [className])}
 			enter={clsx(cls.Overlay_enter, [classNames?.enter])}
 			enterFrom={clsx(cls.Overlay_enterFrom, [classNames?.enterFrom])}
 			enterTo={clsx(cls.Overlay_enterTo, [classNames?.enterTo])}

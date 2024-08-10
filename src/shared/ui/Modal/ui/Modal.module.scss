@@ -17,7 +17,7 @@
 
 		border-radius: rem(20);
 
-		background-color: #fff;
+		background-color: $modalBackgroundColor;
 		box-shadow: 0 rem(4) rem(30) 0 rgba(0, 0, 0, 0.1);
 	}
 
@@ -89,13 +89,14 @@
 
    transition: background-color $primaryTransition, color $primaryTransition;
 
-   border: em(2) solid $blueColor;
+   border: em(2) solid $modalColor;
    border-radius: 50%;
+
 
 	font-size: rem(13);
 
    &:hover {
-      background-color: $blueColor;
+      background-color: $modalColor;
 
       #{$p} {
          &__icon {
@@ -105,7 +106,7 @@
    }
 
    &__icon {
-      fill: $blueColor;
+      fill: $modalColor;
 
       width: em(20);
       height: em(20);
