@@ -16,17 +16,17 @@ export const Decoration: FC<DecorationProps> = ({ className }) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const createSwingAnimation = (from: number, to: number, config: any) => useSpring({
 		loop: { reverse: true },
-		from: { transform: `rotate(${from}deg)` },
-		to: { transform: `rotate(${to}deg)` },
+		from: { transform: `rotate(${from}deg) scale(1.1)` },
+		to: { transform: `rotate(${to}deg) scale(1)` },
 		config: { ...config, delay: 1000 },
 	});
 
 	const animations = [
-		createSwingAnimation(-15, 15, { tension: 180, friction: 12 }),
-		createSwingAnimation(-10, 10, { tension: 200, friction: 10 }),
-		createSwingAnimation(-5, 5, { tension: 150, friction: 14 }),
-		createSwingAnimation(-8, 8, { tension: 220, friction: 8 }),
-		createSwingAnimation(-7, 7, { tension: 190, friction: 11 }),
+		createSwingAnimation(0, 5, { tension: 180, friction: 12 }),
+		createSwingAnimation(0, -4, { tension: 200, friction: 10 }),
+		createSwingAnimation(0, 5, { tension: 150, friction: 14 }),
+		createSwingAnimation(0, -6, { tension: 220, friction: 8 }),
+		createSwingAnimation(0, 5, { tension: 190, friction: 11 }),
 	];
 
 	const icons = [
