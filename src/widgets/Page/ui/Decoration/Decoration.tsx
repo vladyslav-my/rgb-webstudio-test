@@ -1,11 +1,11 @@
 import { useSpring, animated } from "@react-spring/web";
 import clsx from "clsx";
 import { FC } from "react";
-import CssIcon from "../../assets/css.svg?react";
-import HtmlIcon from "../../assets/html.svg?react";
-import JsIcon from "../../assets/js.svg?react";
-import SublimeIcon from "../../assets/sublime.svg?react";
-import VscodeIcon from "../../assets/vscode.svg?react";
+import CssImage from "../../assets/css.png";
+import HtmlImage from "../../assets/html.png";
+import JsImage from "../../assets/js.png";
+import SublimeImage from "../../assets/sublime.png";
+import VscodeImage from "../../assets/vscode.png";
 import cls from "./Decoration.module.scss";
 
 interface DecorationProps {
@@ -32,30 +32,34 @@ export const Decoration: FC<DecorationProps> = ({ className }) => {
 	const icons = [
 		{
 			name: "html",
-			Icon: <HtmlIcon className={cls.Decoration__icon} />,
+			Icon: <img className={cls.Decoration__icon} src={HtmlImage} />,
 		},
 		{
 			name: "css",
-			Icon: <CssIcon className={cls.Decoration__icon} />,
+			Icon: <img className={cls.Decoration__icon} src={CssImage} />,
 		},
 		{
 			name: "js",
-			Icon: <JsIcon className={cls.Decoration__icon} />,
+			Icon: <img className={cls.Decoration__icon} src={JsImage} />,
 		},
 		{
 			name: "sublime",
-			Icon: <SublimeIcon className={cls.Decoration__icon} />,
+			Icon: <img className={cls.Decoration__icon} src={SublimeImage} />,
 		},
 		{
 			name: "vscode",
-			Icon: <VscodeIcon className={cls.Decoration__icon} />,
+			Icon: <img className={cls.Decoration__icon} src={VscodeImage} />,
 		},
 	];
 
 	return (
 		<div className={clsx(cls.Decoration, {}, [className])}>
 			{icons.map(({ name, Icon }, index) => (
-				<animated.div key={name} className={clsx(cls[`Decoration__wrapper_${name}`], cls.Decoration__wrapper)} style={animations[index]}>
+				<animated.div
+					key={name}
+					className={clsx(cls[`Decoration__wrapper_${name}`], cls.Decoration__wrapper)}
+					style={animations[index]}
+				>
 					{Icon}
 				</animated.div>
 			))}
